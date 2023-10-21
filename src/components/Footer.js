@@ -11,8 +11,7 @@ function Footer() {
     <div className="footer-container">
       <section className="footer-subscription">
         <p className="footer-subscription-heading">
-          join the adventure newsletter
-        </p>
+          Join our weekly news report </p>
         <p className="footer-subscription-text">you can subscript at once</p>
         <div className="input-areas">
           <form>
@@ -30,22 +29,22 @@ function Footer() {
         <div className="footer-link-wrapper">
           <div className="footer-link-items">
             <h2>About us</h2>
-            <Link to="/sign-up">How it works</Link>
-            <Link to>Testimonials</Link>
+            <Link to="/services">How it works</Link>
+            {/* <Link to>Testimonials</Link>
             <Link to>Careers</Link>
-            <Link to>Investors</Link>
+            <Link to>Investors</Link> */}
             <Link to>Terms of Service</Link>
           </div>
           <div className="footer-link-items">
             <h2>Contact us</h2>
-            <Link to="/sign-up">How it works</Link>
-            <Link to>Testimonials</Link>
-            <Link to>Careers</Link>
+            <Link to>comercial@intelectronica.com.co</Link>
+            <Link to>+57 312 772 57 39</Link>
+            {/* <Link to>Careers</Link>
             <Link to>Investors</Link>
-            <Link to>Terms of Service</Link>
+            <Link to>Terms of Service</Link> */}
           </div>
         </div>
-        <div className="footer-link-wrapper">
+        {/* <div className="footer-link-wrapper">
           <div className="footer-link-items">
             <h2>About us</h2>
             <Link to="/sign-up">How it works</Link>
@@ -62,7 +61,7 @@ function Footer() {
             <Link to>Investors</Link>
             <Link to>Terms of Service</Link>
           </div>
-        </div>
+        </div> */}
       </div>
       <section className="socialmedia">
         <div className="social-media-wrap">
