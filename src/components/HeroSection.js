@@ -14,15 +14,15 @@ function HeroSection() {
       <h1>INTELECTRONICA</h1>
       <p>Customized solutions</p>
       <div className="hero-btns">
-        {/* <Button
+        {<Button
           className="btns"
           buttonStyle="btn--primary"
           buttonSize="btn--large"
           linkTo="/services"
         >
           GET STARTED
-        </Button> */}
-        {/* <Button
+        </Button> }
+        {<Button
           className="btns"
           buttonStyle="btn--primary"
           buttonSize="btn--large"
@@ -31,7 +31,7 @@ function HeroSection() {
         >
           WATCH TRAILER
           <PlayCircleFilledWhiteIcon />
-        </Button> */}
+        </Button> }
       </div>
     </div>
   );
