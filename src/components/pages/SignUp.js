@@ -51,7 +51,7 @@ export default function SignUp() {
         </div>
       </div>
 
-      <Footer /> {/* Including the Footer component */}
+      <Footer /> {}
     </>
   );
 }

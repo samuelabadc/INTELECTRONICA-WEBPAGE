@@ -1,38 +1,66 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import "../App.css";
 import { Button } from "./Button";
 import "./HeroSection.css";
-// import video from '../assets/video/video-2.mp4'
+import videoSrc from '../assets/video/video-2.mp4'; // Ensure this path is correct
 import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function HeroSection() {
+  const [showVideo, setShowVideo] = useState(false);
+  const videoRef = useRef(null);
+
+  const handleTrailerButtonClick = () => {
+    setShowVideo(true);
+  };
+
+  const handleBackButtonClick = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+    setShowVideo(false);
+  };
+
   return (
     <div className="hero-container">
-      {/* <video src="../assets/video/test_video.ogg" controls/> */}
-      {/* <video src={video} width="750" height="500" autoPlay loop muted>
-     </video> */}
-      <h1>INTELECTRONICA</h1>
-      <p>Customized solutions</p>
-      <div className="hero-btns">
-        {<Button
-          className="btns"
-          buttonStyle="btn--primary"
-          buttonSize="btn--large"
-          linkTo="/services"
-        >
-          GET STARTED
-        </Button> }
-        {<Button
-          className="btns"
-          buttonStyle="btn--primary"
-          buttonSize="btn--large"
-          onClick={console.log("hey")}
-          linkTo="/sign-up"
-        >
-          WATCH TRAILER
-          <PlayCircleFilledWhiteIcon />
-        </Button> }
-      </div>
+      {!showVideo && (
+        <>
+          <h1>INTELECTRONICA</h1>
+          <p>Customized solutions</p>
+          <div className="hero-btns">
+            <Button
+              className="btns"
+              buttonStyle="btn--primary"
+              buttonSize="btn--large"
+              linkTo="/services"
+            >
+              GET STARTED
+            </Button>
+            <Button
+              className="btns"
+              buttonStyle="btn--primary"
+              buttonSize="btn--large"
+              onClick={handleTrailerButtonClick}
+            >
+              WATCH TRAILER
+              <PlayCircleFilledWhiteIcon />
+            </Button>
+          </div>
+        </>
+      )}
+
+      {showVideo && (
+        <div className="video-container">
+          <Button
+            className="back-btn"
+            onClick={handleBackButtonClick}
+          >
+            <ArrowBackIcon />
+          </Button>
+          <video ref={videoRef} src={videoSrc} width="100%" height="auto" controls autoPlay />
+        </div>
+      )}
     </div>
   );
 }
